@@ -1,13 +1,15 @@
 import { Component } from "react";
+import Card from "./Card";
+import "./card-list.css";
 
 class CardList extends Component {
   render() {
     const { monsters } = this.props;
     return (
-      <div>
-        {monsters.map((monster) => (
-          <h1 key={Math.random()}>{monster.name}</h1>
-        ))}
+      <div className="card-list">
+        {monsters.map((monster) => {
+          return <Card monster={monster} key={Math.random()} />;
+        })}
       </div>
     );
   }
